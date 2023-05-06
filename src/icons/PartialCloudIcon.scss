@@ -1,0 +1,62 @@
+$moveAmount: 8px;
+
+.container {
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+
+   img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  .sun {
+    animation-name: sun-move;
+    animation-duration: 17s;
+  }
+  .cloud {
+    animation-name: cloud-move;
+    animation-duration: 23s;
+  }
+}
+@function cloudRandom() {
+  @return ((100*(random(100)-50))/10000) * $moveAmount;
+}
+
+@keyframes sun-move {
+  0% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  25% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  50% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  75% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  100% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+}
+@keyframes cloud-move {
+  0% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  25% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  50% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  75% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+  100% {
+    transform: translate(cloudRandom(), cloudRandom());
+  }
+}
