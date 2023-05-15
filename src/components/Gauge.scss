@@ -1,69 +1,40 @@
 @use "sass:color";
-
-@mixin raised-card($size, $background-color, $glow-color: null) {
-  $light-color: color.scale($background-color, $lightness: 15%); 
-  $dark-color: color.scale($background-color, $blackness: 15%); 
-  $directional: $size * 0.1;
-  $spread: $size * 0.2;
-
-  width: $size;
-  height: $size;
-  background: $background-color;
-  @if $glow-color {
-    background: $glow-color;
-    box-shadow: 0 0 ($size * 0.8) ($size * 0.2) rgba($glow-color, 0.3),
-                $directional $directional $spread $dark-color,
-                (-$directional) (-$directional) $spread $light-color
-                
-  } @else {
-    box-shadow: $directional $directional $spread $dark-color,
-                (-$directional) (-$directional) $spread $light-color;
-  }
-}
-@mixin raised-indent-circle($size, $background-color) {
-  $light-color: color.scale($background-color, $lightness: 15%); 
-  $dark-color: color.scale($background-color, $blackness: 15%); 
-  $directional: $size * 0.1;
-  $spread: $size * 0.2;
-
-  width: $size;
-  height: $size;
-  border-radius: 50%;
-  background: linear-gradient(145deg, $dark-color, $light-color);
-  box-shadow: $directional $directional $spread $dark-color,
-              (-$directional) (-$directional) $spread $light-color;
-}
+@use "../styles/mixins.scss";
 
 .title {
-  justify-self: flex-start;
+  align-self: flex-start;
 }
 
 .gauge-container {
-  width: 100%;
+  width: calc(100% - 30px);
+  aspect-ratio: 1/1;
   background-color: #F6FDFE;
   display: flex;
   justify-content: center;
   position: relative;
   flex-direction: column;
   align-items: center;
-  .label-container {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    aspect-ratio: 1/1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-    font-size: 2em;
-  }
   .gauge-body {
     position: relative;
-    @include raised-indent-circle(250px, #F6FDFE);
+    aspect-ratio: 1/1;
+    flex-grow: 1;
+    @include mixins.raised-indent-circle(100%, #F6FDFE);
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .label-container {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      aspect-ratio: 1/1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-weight: 300;
+      font-size: 1.2em;
+    }
 
     .nub-wrapper {
       position: absolute;
@@ -71,11 +42,11 @@
       height: 100%;
       // transform: translate(25%, 75%)s
       .nub {
-        @include raised-card(12px, #F6FDFE);
+        @include mixins.raised-card(12px, #F6FDFE);
         width: 10%;
         height: 3%;
         &.active {
-          @include raised-card(12px, #F6FDFE, #0FA3B1);
+          @include mixins.raised-card(12px, #F6FDFE, #0FA3B1);
           width: 10%;
           height: 3%;
         }

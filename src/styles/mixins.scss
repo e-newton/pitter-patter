@@ -1,0 +1,34 @@
+@use "sass:color";
+@mixin raised-card($size, $background-color, $glow-color: null, $intensity: 15%) {
+  $light-color: color.scale($background-color, $lightness: $intensity); 
+  $dark-color: color.scale($background-color, $blackness: $intensity); 
+  $directional: $size * 0.1;
+  $spread: $size * 0.2;
+
+  width: $size;
+  height: $size;
+  background: $background-color;
+  @if $glow-color {
+    background: $glow-color;
+    box-shadow: 0 0 ($size * 0.8) ($size * 0.2) rgba($glow-color, 0.3),
+                $directional $directional $spread $dark-color,
+                (-$directional) (-$directional) $spread $light-color
+                
+  } @else {
+    box-shadow: $directional $directional $spread $dark-color,
+                (-$directional) (-$directional) $spread $light-color;
+  }
+}
+@mixin raised-indent-circle($size, $background-color) {
+  $light-color: color.scale($background-color, $lightness: 15%); 
+  $dark-color: color.scale($background-color, $blackness: 15%); 
+  $directional: $size * 0.1;
+  $spread: $size * 0.2;
+
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background: linear-gradient(145deg, $dark-color, $light-color);
+  box-shadow: $directional $directional $spread $dark-color,
+              (-$directional) (-$directional) $spread $light-color;
+}

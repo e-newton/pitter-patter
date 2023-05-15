@@ -54,12 +54,11 @@ export default function Gauge() {
         {
           generateNubs()
         }
-      </div>
-      <div className="label-container">
-        <span>1,027hPa</span>
+        <div className="label-container">
+          <span>1,027hPa</span>
+        </div>
       </div>
     </div>
-    <input type="range" min="0" max="1" step="0.01" onChange={e => setPercentActive(parseFloat(e.target.value))} id="myRange"/>
   </>
   )
 }

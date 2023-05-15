@@ -1,0 +1,12 @@
+@use "./styles/mixins.scss";
+
+.gauge-wrapper {
+  margin: 15px;
+  padding: 15px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixins.raised-card(200px, #F6FDFE, $intensity: 50%);
+  border-radius: 15px;
+}

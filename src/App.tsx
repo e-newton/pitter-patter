@@ -9,7 +9,16 @@ import SunIcon from './icons/SunIcon';
 function App() {
   return (
   <>
-    <div style={{ width: '300px', height: '400px'}}>
+    <div className='gauge-wrapper'>
+      <Gauge/>
+    </div>
+    <div className='gauge-wrapper'>
+      <Gauge/>
+    </div>
+    <div className='gauge-wrapper'>
+      <Gauge/>
+    </div>
+    <div className='gauge-wrapper'>
       <Gauge/>
     </div>
     <SunIcon/>
