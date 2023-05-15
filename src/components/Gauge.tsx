@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import './Gauge.scss'
 
 function degrees_to_radians(degrees: number)
@@ -7,12 +7,19 @@ function degrees_to_radians(degrees: number)
   return degrees * (pi/180);
 }
 
-export default function Gauge() {
-  const steps = 30;
-  const [percentActive, setPercentActive] = useState(0.5);
+export type GaugeProps = {
+  steps?: number;
+  percentActive: number;
+  label?: string;
+  title: string;
+}
+
+export default function Gauge(props: GaugeProps) {
+  const DEFAULT_STEPS = 30;
   // Starting deg = 225degs
 
   function generateNubs() {
+    const steps = props.steps ?? DEFAULT_STEPS;
     const elems = [];
     const totalDegrees = 270;
     const scale = 0.8;
@@ -20,7 +27,7 @@ export default function Gauge() {
     const initalRotation = 135;
     for (let i = 0; i <= steps; i++) {
       let className = 'nub'
-      if (percentActive && i/steps <= percentActive) {
+      if (props.percentActive && i/steps <= props.percentActive) {
         className = 'nub active'
       }
       const rotation = initalRotation + (i * stepSize);
@@ -49,14 +56,17 @@ export default function Gauge() {
   return(
   <>
     <div className="gauge-container">
-      <span className="title">Pressure</span>
+      <span className="title">{props.title}</span>
       <div className="gauge-body">
         {
           generateNubs()
         }
-        <div className="label-container">
-          <span>1,027hPa</span>
-        </div>
+        {
+          props.label && 
+          <div className="label-container">
+            <span>{props.label ?? ''}</span>
+          </div>
+        }
       </div>
     </div>
   </>

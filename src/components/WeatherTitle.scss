@@ -1,0 +1,23 @@
+@use '../styles/mixins.scss';
+.location-name {
+  font-size: 1.5em;
+}
+
+.weather-icon-container {
+  margin: 1em;
+  @include mixins.raised-indent-circle(125px, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.temperature {
+  font-size: 2em;
+}
+.high-low {
+  margin: 1em;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1em;
+}

@@ -7,6 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #F6FDFE;
   font-weight: 300;
+  margin: 15px;
+  width: calc(100vw - 30px);
+  height: calc(100vh - 30px);
+
+  &>div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 code {
