@@ -5,7 +5,7 @@
 
 .weather-icon-container {
   margin: 1em;
-  @include mixins.raised-indent-circle(125px, #ffffff);
+  @include mixins.raised-indent-circle(125px, #F6FDFE);
   display: flex;
   justify-content: center;
   align-items: center;

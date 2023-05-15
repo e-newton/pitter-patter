@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import Forecast from './components/Forecast';
 import Gauge from './components/Gauge';
 import WeatherTitle from './components/WeatherTitle';
 import CloudIcon from './icons/CloudIcon';
@@ -12,6 +13,7 @@ function App() {
   <div className='app-container'>
 
     <WeatherTitle/>
+    <Forecast/>
   {
     // <div className='gauge-wrapper'>
     //   <Gauge title="Title" label="Label" percentActive={0.3}/>

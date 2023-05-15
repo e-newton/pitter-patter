@@ -1,0 +1,6 @@
+@use '../styles/mixins.scss';
+
+.forecast-container {
+  @include mixins.inset(400px, 200px, #F6FDFE);
+  border-radius: 15px;
+}

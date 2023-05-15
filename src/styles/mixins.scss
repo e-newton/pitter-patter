@@ -1,4 +1,16 @@
 @use "sass:color";
+@mixin inset($width, $height, $background-color, $intensity: 15%) {
+  $light-color: color.scale($background-color, $lightness: $intensity); 
+  $dark-color: color.scale($background-color, $blackness: $intensity); 
+  $directional: $width * 0.1;
+  $spread: $width * 0.2;
+
+  width: $width;
+  height: $height;
+  background: $background-color;
+  box-shadow: inset $directional $directional $spread $dark-color,
+              inset (-$directional) (-$directional) $spread $light-color;
+}
 @mixin raised-card($size, $background-color, $glow-color: null, $intensity: 15%) {
   $light-color: color.scale($background-color, $lightness: $intensity); 
   $dark-color: color.scale($background-color, $blackness: $intensity); 
