@@ -1,5 +1,6 @@
 import React from "react";
-import RainIcon from "../icons/Rain";
+import Icon from "../icons/Icon";
+import { IconType } from "../icons/IconTypes";
 import './WeatherTitle.scss'
 
 export default function WeatherTitle() {
@@ -7,7 +8,7 @@ export default function WeatherTitle() {
   <>
     <span className="location-name">Vancouver, Canada</span>
     <div className="weather-icon-container">
-      <RainIcon/>
+      <Icon icon={IconType.PartialCloud}/>
     </div>
     <span className="temperature">16°</span>
     <div className="high-low">
