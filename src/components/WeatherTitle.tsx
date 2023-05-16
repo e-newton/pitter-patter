@@ -8,7 +8,7 @@ export default function WeatherTitle() {
   <>
     <span className="location-name">Vancouver, Canada</span>
     <div className="weather-icon-container">
-      <Icon icon={IconType.PartialCloud}/>
+      <Icon icon={IconType.Sun}/>
     </div>
     <span className="temperature">16°</span>
     <div className="high-low">

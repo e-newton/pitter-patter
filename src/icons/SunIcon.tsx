@@ -6,10 +6,10 @@ import sunBeamsDiag from './icon-images/Sun Beams Diag.svg'
 
 export default function SunIcon() {
   return (
-    <div className='container'>
-      <img className='sun-core' src={sunCore} alt={'Sun Core'} />
-      <img className='sun-beams' src={sunBeamsXY} alt={'Sun Beams'}/>
-      <img className='sun-beams diag' src={sunBeamsDiag} alt={'Sun Beams'}/>
-    </div>
+  <>
+    <img className='sun-core' src={sunCore} alt={'Sun Core'} />
+    <img className='sun-beams' src={sunBeamsXY} alt={'Sun Beams'}/>
+    <img className='sun-beams diag' src={sunBeamsDiag} alt={'Sun Beams'}/>
+  </>
   )
 }
