@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.scss';
 import Forecast from './components/Forecast';
-import Gauge from './components/Gauge';
+// import Gauge from './components/Gauge';
 import WeatherTitle from './components/WeatherTitle';
-import CloudIcon from './icons/CloudIcon';
-import PartialCloudIcon from './icons/PartialCloudIcon';
-import RainIcon from './icons/Rain';
-import SunIcon from './icons/SunIcon';
+// import CloudIcon from './icons/CloudIcon';
+// import PartialCloudIcon from './icons/PartialCloudIcon';
+// import RainIcon from './icons/Rain';
+// import SunIcon from './icons/SunIcon';
 
-function App() {
+function App(): JSX.Element {
   return (
   <div className='app-container'>
 
@@ -22,7 +22,7 @@ function App() {
     // <CloudIcon/>
     // <PartialCloudIcon/>
     // <RainIcon/>
-    // 
+    //
     }
   </div>
   );

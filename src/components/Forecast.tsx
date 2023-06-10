@@ -1,9 +1,9 @@
-import React from "react";
-import './Forecast.scss'
+import React from 'react';
+import './Forecast.scss';
 
-export default function Forecast() {
+export default function Forecast(): JSX.Element {
   return (
   <div className="forecast-container">
   </div>
-  )
+  );
 }

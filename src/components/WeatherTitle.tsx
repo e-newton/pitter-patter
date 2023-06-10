@@ -1,9 +1,9 @@
-import React from "react";
-import Icon from "../icons/Icon";
-import { IconType } from "../icons/IconTypes";
-import './WeatherTitle.scss'
+import React from 'react';
+import Icon from '../icons/Icon';
+import { IconType } from '../icons/IconTypes';
+import './WeatherTitle.scss';
 
-export default function WeatherTitle() {
+export default function WeatherTitle(): JSX.Element {
   return (
   <>
     <span className="location-name">Vancouver, Canada</span>
@@ -16,5 +16,5 @@ export default function WeatherTitle() {
       <span className="high">H: 18˚</span>
     </div>
   </>
-  )
+  );
 }
