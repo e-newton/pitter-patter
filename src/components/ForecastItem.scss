@@ -1,0 +1,28 @@
+@use '../styles/mixins.scss';
+.forecast-item {
+  @include mixins.raised-card(100px, #F6FDFE);
+  height: 150px;
+  padding: 0.5em;
+  background-color: #F6FDFE;
+  border-radius: 15px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  .icon-container {
+    margin: 0.5em;
+    @include mixins.raised-indent-circle(60px, #F6FDFE);
+    padding: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .high-low {
+    margin: 0em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0.5em;
+  }
+}
