@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+import AdditionalData from './components/AdditionalData';
 import Forecast from './components/Forecast';
 // import Gauge from './components/Gauge';
 import WeatherTitle from './components/WeatherTitle';
@@ -14,6 +15,7 @@ function App(): JSX.Element {
 
     <WeatherTitle/>
     <Forecast/>
+    <AdditionalData/>
   {
     // <div className='gauge-wrapper'>
     //   <Gauge title="Title" label="Label" percentActive={0.3}/>

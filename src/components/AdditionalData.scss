@@ -1,0 +1,21 @@
+@use '../styles/mixins.scss';
+.additional-data {
+  display: flex;
+  margin: 1em;
+  .additional-data-block {
+    @include mixins.raised-card(150px, #F6FDFE);
+    border-radius: 15px;
+    padding: 1em;
+  }
+  .additional-data-block-title {
+    color: gray;
+    position: absolute;
+  }
+  .additional-data-block-data {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
